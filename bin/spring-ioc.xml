@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemalLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd"
+		default-init-method="init" default-destroy-method="destroy">
+		
+		<bean id="oneInterface" class="com.zp.ioc.interfaces.OneInterfaceImpl"></bean>
+		
+		<bean id="injectionService" class="com.zp.ioc.injection.service.InjectionServiceImpl">
+			<property name="injectionDAO" ref="injectionDAO"></property>
+			<!-- <constructor-arg name="injectionDAO" ref="injectionDAO" /> -->
+		</bean>
+		<bean id="injectionDAO" class="com.zp.ioc.injection.dao.InjectionDAOImpl"></bean>
+</beans>
